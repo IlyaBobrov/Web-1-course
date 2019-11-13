@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<title></title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<title>JS</title>
+
+	</head>
+	<body>
+		<header>
+				<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#320142">
+					<h3 style="color:#ffffff">Using JavaScrtpt</h3>
+		</header>
+		<div>
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#320142">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="Main.html">Главная</a>
+					</li><!------------------------------------------------------------->
+
+				</ul>
+			</div>
+		</nav>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li  class="breadcrumb-item"><a href="Main.html">Скрытая ссылка</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Площадь</li>
+			</ol>
+		</nav>
+		</div>
+		<section>
+				<div class="container-fluid">
+					<div class="row">
+
+						<div class="col-md-12 col-xl-12 d-flex flex-wrap content">
+
+							<!--<div class="card" style="width: 15rem;">
+								<form class="card-body" id="square">
+									<h5 class="card-title">Квадрат</h5>
+									<label>Сторона: <input min="0" type="number" step="any" required></label>
+									<input type="submit" href="#" class="btn btn-info"  value="Рассчитать"></input>
+								</form>
+							</div>
+
+							<div class="card" style="width: 15rem;">
+								<form class="card-body" id="circle">
+									<h5 class="card-title">Круг</h5>
+									<label>Радиус: <input min="0" type="number" step="any" required></label>
+									<input type="submit" href="#" class="btn btn-info"  value="Рассчитать"></input>
+								</form>
+							</div>-->
+
+							<div class="card" style="width: 15rem;">
+								<form class="card-body" id="ellips">
+									<h5 class="card-title">Эллипс</h5>
+									<label>Длина большой полуоси: <input min="0" type="number" step="any" required ></label>
+									<label>Длина малой полуоси: <input min="0" type="number" step="any" required></label>
+									<input type="submit" href="#" class="btn btn-info"  value="Рассчитать"></input>
+								</form>
+							</div>
+
+							<!--<div class="card" style="width: 15rem;">
+								<form class="card-body" id="par">
+									<h5 class="card-title">Параллелограмм</h5>
+									<label>Основание: <input min="0" type="number" step="any" required></label>
+									<label>Высота: <input min="0" type="number" step="any" required></label>
+									<input type="submit" href="#" class="btn btn-info"  value="Рассчитать"></input>
+								</form>
+							</div>
+
+							<div class="card" style="width: 15rem;">
+								<form class="card-body" id="trap">
+									<h5 class="card-title">Трапеция</h5>
+									<label>Основание верхнее: <input min="0" type="number" step="any" required></label>
+									<label>Основание нижнее: <input min="0" type="number" step="any" required></label>
+									<label>Высота: <input min="0" type="number" step="any" required></label>
+									<input type="submit" class="btn btn-info" value="Рассчитать"></input>
+								</form>
+							</div>
+
+							<div class="card"  style="width: 15rem;">
+								<form class="card-body" id="sang">
+									<h5 class="card-title">Треугольник</h5>
+									<label>Основание: <input min="0" type="number" step="any" required></label>
+									<label>Высота:<br> <input min="0" type="number" step="any" required></label>
+									<input type="submit" href="#" class="btn btn-info" value="Рассчитать"></input>
+								</form>
+							</div>-->
+
+						</div>
+					</div>
+				</div>
+			</section><!-- - - - - - - - - - - - - - - - - - - - - - - - вычисления-->
+			<script type="text/javascript">
+
+				var
+					oper = {
+					/*'square': (a) => a*a,//квадрат
+					'circle': (r) => r*r*Math.PI,//круг*/
+					'ellips': ([a, b]) => a*b*Math.PI,//эллипс
+					/*'par': ([a, р]) => a*р,//параллелограмм
+					'trap': ([a, b, h]) => (a+b)/2*h,//трапеция
+					'sang': ([a, h]) => a*h/2//треугольник*/
+				}
+
+				for(let index in oper) {
+					if (document.getElementById(index) === null) continue;
+					document.getElementById(index).addEventListener('submit', function(e) {
+						let args = []
+						for (var i = 0; i < e.target.length; i++) {
+							if (e.target[i].type != 'number') continue //проверка на цифру
+							args.push(parseFloat(e.target[i].value))
+						}
+						console.log(oper[this.id](args)) //вывод в консоль результата функции
+						e.preventDefault()
+						return false
+					})
+				}
+			</script>
+	</body>
+</html>

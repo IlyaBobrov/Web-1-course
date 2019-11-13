@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Список </title>
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src=" http://code.jquery.com/jquery-1.8.3.js "></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+	const m = [
+		{
+			text: 'Животные',
+			childs: [
+				{
+					text: 'Млекопитающие',
+					childs: [
+						'Коровы',
+						'Ослы',
+						'Собаки',
+						'Тигры'
+					]
+				},
+				{
+					text: 'Рыбы',
+					childs: [
+						{
+							text: 'Аквариумные',
+							childs: [
+								'Гуппи',
+								'Скалярии'
+							]
+						},
+						{
+							text: 'Морские',
+							childs: [
+								'Морская форель'
+							]
+						}
+					]
+				}
+			]
+		},
+	]
+		//append - DOM element будет добавлен в конец выбранных элементов
+		function NewList(childs) {
+
+			var ul = document.createElement('ul')  //открыли список (создание в DOM)
+
+			for (var child of childs) {						 //бежим по детям
+				var li = document.createElement('li')//открываем разделы списка (создаем в DOM)
+				if (child.text !== undefined)				 //если есть ребенок, добавляем в список
+					li.append(child.text);
+				if (typeof child !== 'object')			//если ребенок - обьект
+					li.append(child)									//следущим в списке пойдет ребенок
+				else if (child.childs !== undefined) //если не обьект, если это наследник с детми, то рекурсия
+					li.append(NewList(child.childs));
+				ul.append(li);											//добавили ребенка
+			}
+			return ul;														//вернули список
+		}
+		document.body.append(NewList(m));				//собсна вызов
+
+		//5.2
+
+		function run(element) {
+			if (element.childNodes === undefined) return			//если узел типа ..
+			for (var node of element.childNodes) {						//цикл по узлам, выводим информацию об узлах
+				console.log(node.nodeName, node.nodeType, node.nodeValue)
+				run(node)																				//рекурсия, идем дальше
+			}
+		}
+
+		run(document)
+
+	</script>
+</body>
+</html>
